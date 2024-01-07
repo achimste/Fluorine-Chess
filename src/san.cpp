@@ -137,8 +137,6 @@ namespace Stockfish::SAN
 			if (!move)
 				move = Move(sq_from, sq_to);
 
-			std::cout << UCI::move(move, pos.is_chess960()) << std::endl;
-
 			return MoveList<LEGAL>(pos).contains(move) ? move : Move::none();
 		}
 
