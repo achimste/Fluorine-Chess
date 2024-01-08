@@ -111,14 +111,17 @@ namespace Stockfish {
             Move* quietsSearched, int quietCount, Move* capturesSearched, int captureCount, Depth depth);
 
 #if _DEBUG
+#if 0
         // std::ofstream log("1.txt");
         // static std::atomic<int>counter = 0;
+#endif
 #endif
 
         template <NodeType nodeType, bool SearchMate>
         Value search(Position& pos, Stack* ss, Value alpha, Value beta, Depth depth, bool cutNode) {
 
 #if _DEBUG
+#if 0
             auto debug = [&]()
                 {
                     for (int i = 0; i < pos.this_thread()->rootDepth; ++i) log << " ";
@@ -131,7 +134,8 @@ namespace Stockfish {
                         << std::endl;
                 };
 
-            // debug();
+            debug();
+#endif
 #endif
 
             constexpr bool PvNode = nodeType != NonPV;
